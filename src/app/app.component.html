@@ -3,3 +3,118 @@
 <br />
 
 <div>Escreva seu código HTML abaixo:</div>
+
+<div class="container">
+  <mat-card>
+    <mat-card-content>
+      <mat-spinner *ngIf="isLoading" class="loading"></mat-spinner>
+      <form [formGroup]="cepForm" (ngSubmit)="handleSave()">
+        <div class="cep-form">
+          <mat-form-field>
+            <mat-label>CEP</mat-label>
+            <input
+              matInput
+              formControlName="cep"
+              placeholder="CEP"
+              mask="00000-000"
+              required
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              type="button"
+              (click)="getFormFields(cepForm.get('cep')?.value)"
+            >
+              <mat-icon>search</mat-icon>
+            </button>
+            <mat-error *ngIf="cepForm.get('cep')?.hasError('required')">
+              Campo CEP é obrigatório
+            </mat-error>
+            <mat-error *ngIf="cepForm.get('cep')?.hasError('minlength')">
+              CEP deve ter no mínimo 8 caracteres
+            </mat-error>
+            <mat-error *ngIf="cepForm.get('cep')?.hasError('cepInvalido')">
+              CEP inválido
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Logradouro</mat-label>
+            <input
+              matInput
+              formControlName="logradouro"
+              placeholder="Logradouro"
+            />
+            <mat-error *ngIf="cepForm.get('logradouro')?.hasError('required')">
+              Campo Logradouro é obrigatório
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Complemento</mat-label>
+            <input
+              matInput
+              formControlName="complemento"
+              placeholder="Complemento"
+              mask="separator"
+              thousandSeparator="."
+            />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Bairro</mat-label>
+            <input matInput formControlName="bairro" placeholder="Bairro" />
+            <mat-error *ngIf="cepForm.get('bairro')?.hasError('required')">
+              Campo Bairro é obrigatório
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Localidade</mat-label>
+            <input
+              matInput
+              formControlName="localidade"
+              placeholder="Localidade"
+            />
+            <mat-error *ngIf="cepForm.get('localidade')?.hasError('required')">
+              Campo localidade é obrigatório
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>UF</mat-label>
+            <input matInput formControlName="uf" placeholder="UF" />
+            <mat-error *ngIf="cepForm.get('uf')?.hasError('required')">
+              Campo UF é obrigatório
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>IBGE</mat-label>
+            <input matInput formControlName="ibge" placeholder="IBGE" />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>GIA</mat-label>
+            <input matInput formControlName="gia" placeholder="GIA" />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>DDD</mat-label>
+            <input matInput formControlName="ddd" placeholder="DDD" />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>SIAFI</mat-label>
+            <input matInput formControlName="siafi" placeholder="SIAFI" />
+          </mat-form-field>
+        </div>
+        <div class="flex-right">
+          <button mat-raised-button color="primary" type="submit">
+            Salvar
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
