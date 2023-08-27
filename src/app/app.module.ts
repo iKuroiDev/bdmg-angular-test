@@ -16,7 +16,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ViacepService } from './viacep.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
-import { HelloComponent } from '../hello.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +38,6 @@ import { HelloComponent } from '../hello.component';
     
   ],
   providers: [ViacepService, provideNgxMask()],
-  bootstrap: [AppComponent, HelloComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
