@@ -1,3 +1,4 @@
+import { MatExpansionModule } from '@angular/material/expansion';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ViacepService } from './viacep.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
-import { HelloComponent } from 'src/hello.component';
+import { HelloComponent } from '../hello.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HelloComponent } from 'src/hello.component';
     MatCardModule,
     MatProgressSpinnerModule,
     MatFormFieldModule,
+    MatExpansionModule,
     MatInputModule,
     MatIconModule,
     MatButtonModule,
