@@ -24,7 +24,11 @@
               type="button"
               (click)="getFormFields(cepForm.get('cep')?.value)"
             >
-              <mat-icon>search</mat-icon>
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Pesquisar CEP"
+                fontIcon="search"
+              ></mat-icon>
             </button>
             <mat-error *ngIf="cepForm.get('cep')?.hasError('required')">
               Campo CEP é obrigatório
